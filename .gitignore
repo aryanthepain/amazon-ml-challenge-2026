@@ -32,6 +32,10 @@ models/*.onnx
 .build_kernel/
 kaggle_downloads/
 
+# Media, PDFs, and documentation binaries
+*.pdf
+*.PDF
+
 # OS / IDE
 .DS_Store
 Thumbs.db
