@@ -75,8 +75,8 @@ Plans:
 
 Plans:
 
-- [ ] 03-01: 24-dimensional feature extraction engine and pair dataset builder.
-- [ ] 03-02: LightGBM model training, threshold calibration, and validation evaluation.
+- [x] 03-01: 24-dimensional feature extraction engine and pair dataset builder.
+- [x] 03-02: LightGBM model training, threshold calibration, and validation evaluation.
 
 ---
 
@@ -107,5 +107,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 |-------|----------------|--------|-----------|
 | 1. Foundation, Ingestion & Compute Infrastructure | 2/2 | Complete    | 2026-09-27 |
 | 2. Text Preprocessing & Cascade Blocking Engine | 2/2 | Complete    | 2026-09-27 |
-| 3. Feature Extraction, GBDT Modeling & Macro $F_{0.5}$ Tuning | 0/2 | Not started | - |
+| 3. Feature Extraction, GBDT Modeling & Macro $F_{0.5}$ Tuning | 2/2 | Complete    | 2026-09-27 |
 | 4. Full Test Set Inference, Verification & Submission Packaging | 0/2 | Not started | - |
