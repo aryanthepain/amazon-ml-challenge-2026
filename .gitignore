@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.venv/
+venv/
+env/
+
+# Datasets (Do NOT commit multi-GB datasets to git)
+6ab10eb3b23ba_student_resource/
+student_resource/dataset/
+dataset/
+*.tsv
+!*.sample.tsv
+
+# Outputs & Submissions
+output/
+*.zip
+*.tar.gz
+*.tar
+
+# Models & Checkpoints
+models/*.txt
+models/*.bin
+models/*.pt
+models/*.onnx
+*.pkl
+*.joblib
+
+# Kaggle kernel builders & downloads
+.build_kernel/
+kaggle_downloads/
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+__MACOSX/
+.idea/
+.vscode/
+*.log
