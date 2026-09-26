@@ -7,22 +7,22 @@
 
 ### Environment & Ingestion (ENV)
 
-- [ ] **ENV-01**: Ingestion and validation of training files (`train_source1.tsv`, `train_source2.tsv`, `train_source3.tsv`, `train_ground_truth.tsv`) and test files (`test_source1.tsv`, `test_source2.tsv`, `test_source3.tsv`) without line-merging truncation.
-- [ ] **ENV-02**: Offline validation harness running `student_resource/utils/validate_submission.py` on dummy/baseline submissions to establish deterministic exit 0 checks.
-- [ ] **ENV-03**: Stratified holdout split module (80/20 train/val partitioned strictly by Source 1 entity IDs) ensuring zero data leakage.
+- [x] **ENV-01**: Ingestion and validation of training files (`train_source1.tsv`, `train_source2.tsv`, `train_source3.tsv`, `train_ground_truth.tsv`) and test files (`test_source1.tsv`, `test_source2.tsv`, `test_source3.tsv`) without line-merging truncation.
+- [x] **ENV-02**: Offline validation harness running `student_resource/utils/validate_submission.py` on dummy/baseline submissions to establish deterministic exit 0 checks.
+- [x] **ENV-03**: Stratified holdout split module (80/20 train/val partitioned strictly by Source 1 entity IDs) ensuring zero data leakage.
 
 ### Text Preprocessing & Cleaning (PREP)
 
-- [ ] **PREP-01**: Unicode NFKD normalization decomposing diacritics, multilingual accents, and non-ASCII glyphs.
-- [ ] **PREP-02**: Corporate legal suffix remover stripping 30+ business extensions (`LLC`, `INC`, `CORP`, `PVT LTD`, `LTD`, `SA`, `SAS`, `GMBH`, `CO`) to expose root business entity names.
-- [ ] **PREP-03**: Address normalizer expanding common abbreviations (`ST`, `RD`, `AVE`, `BLVD`) and standardizing whitespace and punctuation.
+- [x] **PREP-01**: Unicode NFKD normalization decomposing diacritics, multilingual accents, and non-ASCII glyphs.
+- [x] **PREP-02**: Corporate legal suffix remover stripping 30+ business extensions (`LLC`, `INC`, `CORP`, `PVT LTD`, `LTD`, `SA`, `SAS`, `GMBH`, `CO`) to expose root business entity names.
+- [x] **PREP-03**: Address normalizer expanding common abbreviations (`ST`, `RD`, `AVE`, `BLVD`) and standardizing whitespace and punctuation.
 
 ### Cascade Blocking & Candidate Generation (BLOCK)
 
-- [ ] **BLOCK-01**: 100% strict country partitioning separating records by open-set country strings (`US`, `India`, `France`), eliminating cross-country comparisons.
-- [ ] **BLOCK-02**: Multi-key inverted index cascade (`by_both`, `by_name`, `by_addr`, `by_pref`) generating high-recall candidates for every Source 1 entity.
-- [ ] **BLOCK-03**: Candidate generation exporter producing `output/candidate_pairs.tsv` conforming to official format rules (one row per S1 entity, comma-separated candidate IDs).
-- [ ] **BLOCK-04**: Empirical recall ceiling measurement on validation split demonstrating $\ge 95\%$ pair recall ceiling with $>99.9\%$ comparison space reduction.
+- [x] **BLOCK-01**: 100% strict country partitioning separating records by open-set country strings (`US`, `India`, `France`), eliminating cross-country comparisons.
+- [x] **BLOCK-02**: Multi-key inverted index cascade (`by_both`, `by_name`, `by_addr`, `by_pref`) generating high-recall candidates for every Source 1 entity.
+- [x] **BLOCK-03**: Candidate generation exporter producing `output/candidate_pairs.tsv` conforming to official format rules (one row per S1 entity, comma-separated candidate IDs).
+- [x] **BLOCK-04**: Empirical recall ceiling measurement on validation split demonstrating $\ge 95\%$ pair recall ceiling with $>99.9\%$ comparison space reduction.
 
 ### Feature Extraction (FEAT)
 
@@ -40,8 +40,8 @@
 
 ### Remote Compute & Acceleration (REMOTE)
 
-- [ ] **REMOTE-01**: Kaggle automated kernel packager bundling modular code and dataset inputs for execution on Kaggle dual-T4 GPUs.
-- [ ] **REMOTE-02**: Kernel status poller and artifact synchronizer downloading outputs back to local repository (`output/` and model checkpoints).
+- [x] **REMOTE-01**: Kaggle automated kernel packager bundling modular code and dataset inputs for execution on Kaggle dual-T4 GPUs.
+- [x] **REMOTE-02**: Kernel status poller and artifact synchronizer downloading outputs back to local repository (`output/` and model checkpoints).
 
 ### Submission Packaging & Audit (SUB)
 
@@ -67,31 +67,32 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| ENV-01 | Phase 1 | Pending |
-| ENV-02 | Phase 1 | Pending |
-| ENV-03 | Phase 1 | Pending |
-| REMOTE-01 | Phase 1 | Pending |
-| REMOTE-02 | Phase 1 | Pending |
-| PREP-01 | Phase 2 | Pending |
-| PREP-02 | Phase 2 | Pending |
-| PREP-03 | Phase 2 | Pending |
-| BLOCK-01 | Phase 2 | Pending |
-| BLOCK-02 | Phase 2 | Pending |
-| BLOCK-03 | Phase 2 | Pending |
-| BLOCK-04 | Phase 2 | Pending |
-| FEAT-01 | Phase 3 | Pending |
-| FEAT-02 | Phase 3 | Pending |
-| FEAT-03 | Phase 3 | Pending |
-| FEAT-04 | Phase 3 | Pending |
-| MODEL-01 | Phase 3 | Pending |
-| MODEL-02 | Phase 3 | Pending |
-| MODEL-03 | Phase 3 | Pending |
-| MODEL-04 | Phase 3 | Pending |
+| ENV-01 | Phase 1 | Complete |
+| ENV-02 | Phase 1 | Complete |
+| ENV-03 | Phase 1 | Complete |
+| REMOTE-01 | Phase 1 | Complete |
+| REMOTE-02 | Phase 1 | Complete |
+| PREP-01 | Phase 2 | Complete |
+| PREP-02 | Phase 2 | Complete |
+| PREP-03 | Phase 2 | Complete |
+| BLOCK-01 | Phase 2 | Complete |
+| BLOCK-02 | Phase 2 | Complete |
+| BLOCK-03 | Phase 2 | Complete |
+| BLOCK-04 | Phase 2 | Complete |
+| FEAT-01 | Phase 3 | Complete |
+| FEAT-02 | Phase 3 | Complete |
+| FEAT-03 | Phase 3 | Complete |
+| FEAT-04 | Phase 3 | Complete |
+| MODEL-01 | Phase 3 | Complete |
+| MODEL-02 | Phase 3 | Complete |
+| MODEL-03 | Phase 3 | Complete |
+| MODEL-04 | Phase 3 | Complete |
 | SUB-01 | Phase 4 | Pending |
 | SUB-02 | Phase 4 | Pending |
 | SUB-03 | Phase 4 | Pending |
 
 **Coverage:**
+
 - v1 requirements: 23 total
 - Mapped to phases: 23
 - Unmapped: 0 ✓

@@ -1,0 +1,33 @@
+{
+  "contract": "1.0.0",
+  "flavor": "core",
+  "milestone": null,
+  "phases": [
+    {
+      "number": "1",
+      "name": "Foundation, Ingestion & Compute Infrastructure",
+      "status": "complete"
+    },
+    {
+      "number": "2",
+      "name": "Text Preprocessing & Cascade Blocking Engine",
+      "status": "complete"
+    },
+    {
+      "number": "3",
+      "name": "Feature Extraction, GBDT Modeling & Macro $F_{0.5}$ Tuning",
+      "status": "complete"
+    },
+    {
+      "number": "4",
+      "name": "Full Test Set Inference, Verification & Submission Packaging",
+      "status": "pending"
+    }
+  ],
+  "next": {
+    "command": "/gsd-discuss-phase 4",
+    "label": "Discuss Phase 4",
+    "reason": "Phase 03 of 4 · 75% · completed"
+  },
+  "updated_at": "2026-09-27T03:30:00.000Z"
+}
