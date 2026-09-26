@@ -8,7 +8,7 @@ Build, optimize, and package an end-to-end Machine Learning pipeline for the Ama
 
 - [x] **Phase 1: Foundation, Ingestion & Compute Infrastructure** - Set up data pipelines, local smoke tests, official submission validation harness, and Kaggle GPU automation. (completed 2026-09-27)
 - [x] **Phase 2: Text Preprocessing & Cascade Blocking Engine** - Implement Unicode NFKD cleaning, corporate suffix stripping, country-partitioned cascade inverted indexes, and emit `candidate_pairs.tsv`. (completed 2026-09-27)
-- [ ] **Phase 3: Feature Extraction, GBDT Modeling & Macro $F_{0.5}$ Tuning** - Extract 24-dim similarity/conflict features, train LightGBM classifier, and tune decision threshold $\theta^* \approx 0.70$ for Macro $F_{0.5}$.
+- [x] **Phase 3: Feature Extraction, GBDT Modeling & Macro $F_{0.5}$ Tuning** - Extract 24-dim similarity/conflict features, train LightGBM classifier, and tune decision threshold $\theta^* \approx 0.70$ for Macro $F_{0.5}$. (completed 2026-09-27)
 - [ ] **Phase 4: Full Test Set Inference, Verification & Submission Packaging** - Execute full 1.73M test inference via Kaggle/local GPUs, verify `validate_submission.py` exit 0, and build `<team_name>_submission.zip`.
 
 ## Phase Details
