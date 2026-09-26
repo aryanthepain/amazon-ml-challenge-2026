@@ -5,20 +5,26 @@ Write-Host "=======================================================" -Foreground
 Write-Host "  AMAZON ML CHALLENGE 2026: PHASE 1 VERIFICATION GATE  " -ForegroundColor Cyan
 Write-Host "=======================================================" -ForegroundColor Cyan
 
-# 1. Run pytest suite
-Write-Host "`n[1/3] Running Phase 1 Foundation Pytest Suite..." -ForegroundColor Yellow
-$pytestOutput = pytest tests/test_phase1_foundation.py -v --tb=short
-$pytestExit = $LASTEXITCODE
-
-if ($pytestExit -eq 0) {
-    Write-Host "[PASS] All Phase 1 foundation tests passed successfully." -ForegroundColor Green
-} else {
-    Write-Host "[FAIL] Pytest encountered failures (Exit code: $pytestExit)." -ForegroundColor Red
-    exit $pytestExit
+# 1. Run Foundation Pytest Suite
+Write-Host "`n[1/4] Running Phase 1 Foundation Pytest Suite..." -ForegroundColor Yellow
+pytest tests/test_phase1_foundation.py -v --tb=short
+if ($LASTEXITCODE -ne 0) {
+    Write-Host "[FAIL] Foundation pytest suite failed." -ForegroundColor Red
+    exit $LASTEXITCODE
 }
+Write-Host "[PASS] Foundation pytest suite passed." -ForegroundColor Green
 
-# 2. Check Data Loader diagnostic
-Write-Host "`n[2/3] Checking Data Loader Ingestion Diagnostic..." -ForegroundColor Yellow
+# 2. Run Kaggle Environment Pytest Suite
+Write-Host "`n[2/4] Running Kaggle Remote Environment Pytest Suite..." -ForegroundColor Yellow
+pytest tests/test_kaggle_env.py -v --tb=short
+if ($LASTEXITCODE -ne 0) {
+    Write-Host "[FAIL] Kaggle environment pytest suite failed." -ForegroundColor Red
+    exit $LASTEXITCODE
+}
+Write-Host "[PASS] Kaggle environment pytest suite passed." -ForegroundColor Green
+
+# 3. Check Data Loader Ingestion Diagnostic
+Write-Host "`n[3/4] Checking Data Loader Ingestion Diagnostic..." -ForegroundColor Yellow
 python src/data_loader.py --check
 if ($LASTEXITCODE -ne 0) {
     Write-Host "[FAIL] Data loader diagnostic failed." -ForegroundColor Red
@@ -26,16 +32,16 @@ if ($LASTEXITCODE -ne 0) {
 }
 Write-Host "[PASS] Ingestion & dynamic path resolution verified." -ForegroundColor Green
 
-# 3. Check Evaluator Help
-Write-Host "`n[3/3] Checking Evaluation Harness CLI..." -ForegroundColor Yellow
-python evaluate.py --help > $null
+# 4. Check Kaggle Pre-Flight Doctor
+Write-Host "`n[4/4] Checking Kaggle Credentials Doctor..." -ForegroundColor Yellow
+python scripts/verify_kaggle_env.py --check-only
 if ($LASTEXITCODE -ne 0) {
-    Write-Host "[FAIL] evaluate.py CLI failed." -ForegroundColor Red
+    Write-Host "[FAIL] Kaggle pre-flight doctor check failed." -ForegroundColor Red
     exit $LASTEXITCODE
 }
-Write-Host "[PASS] evaluate.py verified." -ForegroundColor Green
+Write-Host "[PASS] Kaggle pre-flight credentials verified." -ForegroundColor Green
 
 Write-Host "`n=======================================================" -ForegroundColor Green
-Write-Host " [SUCCESS] All Phase 1 Foundation Gates PASSED!       " -ForegroundColor Green
+Write-Host " [SUCCESS] All Phase 1 Verification Gates PASSED!     " -ForegroundColor Green
 Write-Host "=======================================================" -ForegroundColor Green
 exit 0

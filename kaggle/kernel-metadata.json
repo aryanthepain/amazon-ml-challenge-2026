@@ -1,0 +1,16 @@
+{
+  "id": "aryanguptaji/amazon-ml-challenge-2026-smoke",
+  "title": "amazon-ml-challenge-2026-smoke",
+  "code_file": "kaggle_entrypoint.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": "true",
+  "enable_gpu": "true",
+  "enable_tpu": "false",
+  "enable_internet": "false",
+  "dataset_sources": [
+    "aryanguptaji/amazon-ml-challenge-2026-dataset"
+  ],
+  "competition_sources": [],
+  "kernel_sources": []
+}
