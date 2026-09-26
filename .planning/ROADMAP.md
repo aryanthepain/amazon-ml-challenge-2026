@@ -49,8 +49,12 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
+**Wave 1**
 
 - [ ] 02-01: Fast text preprocessing, normalization, and corporate suffix stripping.
+
+**Wave 2** *(blocked on Wave 1 completion)*
+
 - [ ] 02-02: Country-partitioned cascade inverted indexing, candidate generation, and recall ceiling auditing.
 
 ---
