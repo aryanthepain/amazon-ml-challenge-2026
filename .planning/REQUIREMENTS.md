@@ -13,16 +13,16 @@
 
 ### Text Preprocessing & Cleaning (PREP)
 
-- [ ] **PREP-01**: Unicode NFKD normalization decomposing diacritics, multilingual accents, and non-ASCII glyphs.
-- [ ] **PREP-02**: Corporate legal suffix remover stripping 30+ business extensions (`LLC`, `INC`, `CORP`, `PVT LTD`, `LTD`, `SA`, `SAS`, `GMBH`, `CO`) to expose root business entity names.
-- [ ] **PREP-03**: Address normalizer expanding common abbreviations (`ST`, `RD`, `AVE`, `BLVD`) and standardizing whitespace and punctuation.
+- [x] **PREP-01**: Unicode NFKD normalization decomposing diacritics, multilingual accents, and non-ASCII glyphs.
+- [x] **PREP-02**: Corporate legal suffix remover stripping 30+ business extensions (`LLC`, `INC`, `CORP`, `PVT LTD`, `LTD`, `SA`, `SAS`, `GMBH`, `CO`) to expose root business entity names.
+- [x] **PREP-03**: Address normalizer expanding common abbreviations (`ST`, `RD`, `AVE`, `BLVD`) and standardizing whitespace and punctuation.
 
 ### Cascade Blocking & Candidate Generation (BLOCK)
 
-- [ ] **BLOCK-01**: 100% strict country partitioning separating records by open-set country strings (`US`, `India`, `France`), eliminating cross-country comparisons.
-- [ ] **BLOCK-02**: Multi-key inverted index cascade (`by_both`, `by_name`, `by_addr`, `by_pref`) generating high-recall candidates for every Source 1 entity.
-- [ ] **BLOCK-03**: Candidate generation exporter producing `output/candidate_pairs.tsv` conforming to official format rules (one row per S1 entity, comma-separated candidate IDs).
-- [ ] **BLOCK-04**: Empirical recall ceiling measurement on validation split demonstrating $\ge 95\%$ pair recall ceiling with $>99.9\%$ comparison space reduction.
+- [x] **BLOCK-01**: 100% strict country partitioning separating records by open-set country strings (`US`, `India`, `France`), eliminating cross-country comparisons.
+- [x] **BLOCK-02**: Multi-key inverted index cascade (`by_both`, `by_name`, `by_addr`, `by_pref`) generating high-recall candidates for every Source 1 entity.
+- [x] **BLOCK-03**: Candidate generation exporter producing `output/candidate_pairs.tsv` conforming to official format rules (one row per S1 entity, comma-separated candidate IDs).
+- [x] **BLOCK-04**: Empirical recall ceiling measurement on validation split demonstrating $\ge 95\%$ pair recall ceiling with $>99.9\%$ comparison space reduction.
 
 ### Feature Extraction (FEAT)
 
@@ -72,13 +72,13 @@
 | ENV-03 | Phase 1 | Complete |
 | REMOTE-01 | Phase 1 | Complete |
 | REMOTE-02 | Phase 1 | Complete |
-| PREP-01 | Phase 2 | Pending |
-| PREP-02 | Phase 2 | Pending |
-| PREP-03 | Phase 2 | Pending |
-| BLOCK-01 | Phase 2 | Pending |
-| BLOCK-02 | Phase 2 | Pending |
-| BLOCK-03 | Phase 2 | Pending |
-| BLOCK-04 | Phase 2 | Pending |
+| PREP-01 | Phase 2 | Complete |
+| PREP-02 | Phase 2 | Complete |
+| PREP-03 | Phase 2 | Complete |
+| BLOCK-01 | Phase 2 | Complete |
+| BLOCK-02 | Phase 2 | Complete |
+| BLOCK-03 | Phase 2 | Complete |
+| BLOCK-04 | Phase 2 | Complete |
 | FEAT-01 | Phase 3 | Pending |
 | FEAT-02 | Phase 3 | Pending |
 | FEAT-03 | Phase 3 | Pending |

@@ -7,7 +7,7 @@ Build, optimize, and package an end-to-end Machine Learning pipeline for the Ama
 ## Phases
 
 - [x] **Phase 1: Foundation, Ingestion & Compute Infrastructure** - Set up data pipelines, local smoke tests, official submission validation harness, and Kaggle GPU automation. (completed 2026-09-27)
-- [ ] **Phase 2: Text Preprocessing & Cascade Blocking Engine** - Implement Unicode NFKD cleaning, corporate suffix stripping, country-partitioned cascade inverted indexes, and emit `candidate_pairs.tsv`.
+- [x] **Phase 2: Text Preprocessing & Cascade Blocking Engine** - Implement Unicode NFKD cleaning, corporate suffix stripping, country-partitioned cascade inverted indexes, and emit `candidate_pairs.tsv`. (completed 2026-09-27)
 - [ ] **Phase 3: Feature Extraction, GBDT Modeling & Macro $F_{0.5}$ Tuning** - Extract 24-dim similarity/conflict features, train LightGBM classifier, and tune decision threshold $\theta^* \approx 0.70$ for Macro $F_{0.5}$.
 - [ ] **Phase 4: Full Test Set Inference, Verification & Submission Packaging** - Execute full 1.73M test inference via Kaggle/local GPUs, verify `validate_submission.py` exit 0, and build `<team_name>_submission.zip`.
 
@@ -51,11 +51,11 @@ Plans:
 Plans:
 **Wave 1**
 
-- [ ] 02-01: Fast text preprocessing, normalization, and corporate suffix stripping.
+- [x] 02-01: Fast text preprocessing, normalization, and corporate suffix stripping.
 
 **Wave 2** *(blocked on Wave 1 completion)*
 
-- [ ] 02-02: Country-partitioned cascade inverted indexing, candidate generation, and recall ceiling auditing.
+- [x] 02-02: Country-partitioned cascade inverted indexing, candidate generation, and recall ceiling auditing.
 
 ---
 
@@ -106,6 +106,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation, Ingestion & Compute Infrastructure | 2/2 | Complete    | 2026-09-27 |
-| 2. Text Preprocessing & Cascade Blocking Engine | 0/2 | Not started | - |
+| 2. Text Preprocessing & Cascade Blocking Engine | 2/2 | Complete    | 2026-09-27 |
 | 3. Feature Extraction, GBDT Modeling & Macro $F_{0.5}$ Tuning | 0/2 | Not started | - |
 | 4. Full Test Set Inference, Verification & Submission Packaging | 0/2 | Not started | - |
