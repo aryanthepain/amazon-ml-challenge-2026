@@ -41,8 +41,17 @@ if ($LASTEXITCODE -ne 0) {
 }
 Write-Host "[PASS] Phase 2 Blocking pytest suite passed." -ForegroundColor Green
 
-# 5. Check Data Loader Ingestion Diagnostic
-Write-Host "`n[5/6] Checking Data Loader Ingestion Diagnostic..." -ForegroundColor Yellow
+# 5. Run Phase 3 Features Pytest Suite
+Write-Host "`n[5/7] Running Phase 3 Features Pytest Suite..." -ForegroundColor Yellow
+pytest tests/test_phase3_features.py -v --tb=short
+if ($LASTEXITCODE -ne 0) {
+    Write-Host "[FAIL] Phase 3 Features pytest suite failed." -ForegroundColor Red
+    exit $LASTEXITCODE
+}
+Write-Host "[PASS] Phase 3 Features pytest suite passed." -ForegroundColor Green
+
+# 6. Check Data Loader Ingestion Diagnostic
+Write-Host "`n[6/7] Checking Data Loader Ingestion Diagnostic..." -ForegroundColor Yellow
 python src/data_loader.py --check
 if ($LASTEXITCODE -ne 0) {
     Write-Host "[FAIL] Data loader diagnostic failed." -ForegroundColor Red
@@ -50,8 +59,8 @@ if ($LASTEXITCODE -ne 0) {
 }
 Write-Host "[PASS] Ingestion & dynamic path resolution verified." -ForegroundColor Green
 
-# 6. Check Kaggle Pre-Flight Doctor
-Write-Host "`n[6/6] Checking Kaggle Credentials Doctor..." -ForegroundColor Yellow
+# 7. Check Kaggle Pre-Flight Doctor
+Write-Host "`n[7/7] Checking Kaggle Credentials Doctor..." -ForegroundColor Yellow
 python scripts/verify_kaggle_env.py --check-only
 if ($LASTEXITCODE -ne 0) {
     Write-Host "[FAIL] Kaggle pre-flight doctor check failed." -ForegroundColor Red
