@@ -41,9 +41,9 @@ if ($LASTEXITCODE -ne 0) {
 }
 Write-Host "[PASS] Phase 2 Blocking pytest suite passed." -ForegroundColor Green
 
-# 5. Run Phase 3 Features Pytest Suite
-Write-Host "`n[5/7] Running Phase 3 Features Pytest Suite..." -ForegroundColor Yellow
-pytest tests/test_phase3_features.py -v --tb=short
+# 5. Run Phase 3 Features & GBDT Modeling Pytest Suite
+Write-Host "`n[5/7] Running Phase 3 Features & Modeling Pytest Suite..." -ForegroundColor Yellow
+pytest tests/test_phase3_features.py tests/test_phase3_model.py -v --tb=short
 if ($LASTEXITCODE -ne 0) {
     Write-Host "[FAIL] Phase 3 Features pytest suite failed." -ForegroundColor Red
     exit $LASTEXITCODE
