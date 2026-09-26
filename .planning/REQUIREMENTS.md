@@ -7,9 +7,9 @@
 
 ### Environment & Ingestion (ENV)
 
-- [ ] **ENV-01**: Ingestion and validation of training files (`train_source1.tsv`, `train_source2.tsv`, `train_source3.tsv`, `train_ground_truth.tsv`) and test files (`test_source1.tsv`, `test_source2.tsv`, `test_source3.tsv`) without line-merging truncation.
-- [ ] **ENV-02**: Offline validation harness running `student_resource/utils/validate_submission.py` on dummy/baseline submissions to establish deterministic exit 0 checks.
-- [ ] **ENV-03**: Stratified holdout split module (80/20 train/val partitioned strictly by Source 1 entity IDs) ensuring zero data leakage.
+- [x] **ENV-01**: Ingestion and validation of training files (`train_source1.tsv`, `train_source2.tsv`, `train_source3.tsv`, `train_ground_truth.tsv`) and test files (`test_source1.tsv`, `test_source2.tsv`, `test_source3.tsv`) without line-merging truncation.
+- [x] **ENV-02**: Offline validation harness running `student_resource/utils/validate_submission.py` on dummy/baseline submissions to establish deterministic exit 0 checks.
+- [x] **ENV-03**: Stratified holdout split module (80/20 train/val partitioned strictly by Source 1 entity IDs) ensuring zero data leakage.
 
 ### Text Preprocessing & Cleaning (PREP)
 
@@ -40,8 +40,8 @@
 
 ### Remote Compute & Acceleration (REMOTE)
 
-- [ ] **REMOTE-01**: Kaggle automated kernel packager bundling modular code and dataset inputs for execution on Kaggle dual-T4 GPUs.
-- [ ] **REMOTE-02**: Kernel status poller and artifact synchronizer downloading outputs back to local repository (`output/` and model checkpoints).
+- [x] **REMOTE-01**: Kaggle automated kernel packager bundling modular code and dataset inputs for execution on Kaggle dual-T4 GPUs.
+- [x] **REMOTE-02**: Kernel status poller and artifact synchronizer downloading outputs back to local repository (`output/` and model checkpoints).
 
 ### Submission Packaging & Audit (SUB)
 
@@ -67,11 +67,11 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| ENV-01 | Phase 1 | Pending |
-| ENV-02 | Phase 1 | Pending |
-| ENV-03 | Phase 1 | Pending |
-| REMOTE-01 | Phase 1 | Pending |
-| REMOTE-02 | Phase 1 | Pending |
+| ENV-01 | Phase 1 | Complete |
+| ENV-02 | Phase 1 | Complete |
+| ENV-03 | Phase 1 | Complete |
+| REMOTE-01 | Phase 1 | Complete |
+| REMOTE-02 | Phase 1 | Complete |
 | PREP-01 | Phase 2 | Pending |
 | PREP-02 | Phase 2 | Pending |
 | PREP-03 | Phase 2 | Pending |
@@ -92,6 +92,7 @@
 | SUB-03 | Phase 4 | Pending |
 
 **Coverage:**
+
 - v1 requirements: 23 total
 - Mapped to phases: 23
 - Unmapped: 0 ✓
